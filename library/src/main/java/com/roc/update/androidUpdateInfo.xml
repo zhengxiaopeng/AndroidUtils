@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 更新xml信息，注意不要格式化这里的代码 -->
+<update>
+	<version>1.0.0</version>
+	<description>新版本：1.0.0/更多功能描述···</description>
+	<!-- 按需求取舍 -->
+	<apkurl>http://192.168.206.1:8080/repairSys/Mobile/RepairSystem.apk</apkurl>
+</update>

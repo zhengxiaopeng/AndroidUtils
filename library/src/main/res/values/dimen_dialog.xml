@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 自定义Dialog时Dialog的尺寸离边缘的尺寸 -->
+    <dimen name="dialog_edge_size">10dp</dimen>
+    <dimen name="dialog_title_height">40dp</dimen>
+    <dimen name="dialog_title_text_size">20sp</dimen>
+
+</resources>

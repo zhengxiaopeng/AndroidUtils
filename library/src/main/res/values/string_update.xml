@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="updating">软件更新下载中</string>
+    <string name="download_failed">下载失败</string>
+
+</resources>

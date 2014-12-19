@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="no_network">无网络！</string>
+    <string name="no_sdcrad">无SD卡！</string>
+    <string name="external_error">外部存储异常！</string>
+
+</resources>

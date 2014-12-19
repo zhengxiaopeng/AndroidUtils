@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 显示简单提示信息的Dialog -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dialog_edge_size"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <!-- 标题栏 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_title_height"
+            android:layout_marginBottom="5dp"
+            android:background="@color/skyblue"
+            android:gravity="left|center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/txtView_dialog_simple_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:text="title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dialog_title_text_size" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtView_dialog_simple_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="test"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingTop="5dp" >
+
+            <include
+                layout="@layout/view_horizontal_line"
+                android:background="@color/burlywood" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn_dialog_simple_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_dialog_btn"
+                    android:padding="10dp"
+                    android:text="取消"
+                    android:textColor="@color/black" />
+
+                <include
+                    layout="@layout/view_vertical_line"
+                    android:background="@color/burlywood"
+                    android:padding="5dp" />
+
+                <Button
+                    android:id="@+id/btn_dialog_simple_confirm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_dialog_btn"
+                    android:padding="10dp"
+                    android:text="确定"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

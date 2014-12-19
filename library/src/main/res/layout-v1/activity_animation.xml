@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_animation_contennt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/btn_animation_test1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button" />
+
+        <Button
+            android:id="@+id/btn_animation_test2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button" />
+
+        <Button
+            android:id="@+id/btn_animation_test3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="button" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp" >
+
+        <Button
+            android:id="@+id/btn_animation_menu"
+            style="@style/MenuStyle"
+            android:background="@drawable/menu" />
+
+        <Button
+            android:id="@+id/btn_animation_item1"
+            style="@style/MenuItemStyle"
+            android:background="@drawable/circle1"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_animation_item2"
+            style="@style/MenuItemStyle"
+            android:background="@drawable/circle2"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_animation_item3"
+            style="@style/MenuItemStyle"
+            android:background="@drawable/circle3"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_animation_item4"
+            style="@style/MenuItemStyle"
+            android:background="@drawable/circle4"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_animation_item5"
+            style="@style/MenuItemStyle"
+            android:background="@drawable/circle5"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
