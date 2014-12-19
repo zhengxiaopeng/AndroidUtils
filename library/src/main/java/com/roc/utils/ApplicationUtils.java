@@ -87,9 +87,9 @@ public class ApplicationUtils {
      * @param context
      * @return
      */
-    public static int getAppVersionCode(Context context) {
+    public static int getAppVersionCode() {
         try {
-            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            PackageInfo info = MainApplication.getContext().getPackageManager().getPackageInfo(MainApplication.getContext().getPackageName(), 0);
             return info.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -103,9 +103,9 @@ public class ApplicationUtils {
      * @param context
      * @return
      */
-    public static String getAppVersionName(Context context) {
+    public static String getAppVersionName() {
         try {
-            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            PackageInfo info = MainApplication.getContext().getPackageManager().getPackageInfo(MainApplication.getContext().getPackageName(), 0);
             return info.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

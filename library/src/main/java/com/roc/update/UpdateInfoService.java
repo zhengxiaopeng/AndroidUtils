@@ -22,7 +22,7 @@ public class UpdateInfoService {
 		String path = Urls.baseUrl + Urls.update;// mContext.getResources().getString(R.string.base_url)
 													// +
 													// mContext.getResources().getString(R.string.updateInfoUrl);
-		return UpdateinfoParser.getUpdateInfo(CustomHttpClient.getHttpResponseByGET(path, null).getEntity()
+		return UpdateinfoParser.getUpdateInfo(CustomHttpClient.getHttpResponseByGET(path).getEntity()
 				.getContent());
 	}
 }

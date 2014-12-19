@@ -33,7 +33,7 @@ public class DownloadTask {
         Message msg;
         try {
             HttpResponse response;
-            response = CustomHttpClient.getHttpResponseByGET(urlPath, null);
+            response = CustomHttpClient.getHttpResponseByGET(urlPath);
             int statusCode = response.getStatusLine().getStatusCode();
             DebugLog.v("下载更新返回状态码：" + statusCode);
             if (statusCode == 200) {

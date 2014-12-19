@@ -121,7 +121,7 @@ public class LruCacheTestActivity extends BaseActivity implements OnClickListene
 		BufferedOutputStream out = null;
 		BufferedInputStream in = null;
 		try {
-			HttpResponse httpResponse = CustomHttpClient.getHttpResponseByGET(urlString, null);
+			HttpResponse httpResponse = CustomHttpClient.getHttpResponseByGET(urlString);
 			in = new BufferedInputStream(httpResponse.getEntity().getContent(), 8 * 1024);
 			out = new BufferedOutputStream(outputStream, 8 * 1024);
 			int b;

@@ -6,6 +6,12 @@ import android.telephony.TelephonyManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.roc.app.MainApplication;
+import com.roc.common.DebugLog;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 
 /**
  * Created by Rocko on 2014/12/19 0019.
@@ -49,5 +55,28 @@ public class PhoneUtils {
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
+    }
+
+    /**
+     * 获取本机IP地址
+     * @return
+     */
+    public static String getLocalIpAddress() {
+        try {
+            for (Enumeration<NetworkInterface> en = NetworkInterface
+                    .getNetworkInterfaces(); en.hasMoreElements(); ) {
+                NetworkInterface intf = en.nextElement();
+                for (Enumeration<InetAddress> enumIpAddr = intf
+                        .getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
+                    InetAddress inetAddress = enumIpAddr.nextElement();
+                    if (!inetAddress.isLoopbackAddress()) {
+                        return inetAddress.getHostAddress().toString();
+                    }
+                }
+            }
+        } catch (SocketException ex) {
+            DebugLog.e(ex.getMessage());
+        }
+        return null;
     }
 }

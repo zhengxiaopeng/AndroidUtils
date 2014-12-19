@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.roc.androidutils.R;
 import com.roc.common.DebugLog;
 import com.roc.http.HttpUtil;
+import com.roc.utils.ApplicationUtils;
 import com.roc.utils.CommonUtils;
 import com.roc.utils.DialogUtils;
 import com.roc.widget.dialog.SimpleDialog;
@@ -79,7 +80,7 @@ public class UpdateManager {
 	 */
 	private static boolean isNeedUpdate(Context context) {
 		UpdateInfo info = getUpdateInfo(context);
-		String currentVersion = CommonUtils.getAppVersionName(context);
+		String currentVersion = ApplicationUtils.getAppVersionName();
 		DebugLog.v("当前程序版本：" + currentVersion);
 		try {
 			String v = info.getVersion();

@@ -6,6 +6,7 @@ import java.io.IOException;
 import android.content.Context;
 import android.os.Environment;
 
+import com.roc.utils.ApplicationUtils;
 import com.roc.utils.CommonUtils;
 
 /**
@@ -28,7 +29,7 @@ public class IOHelper {
 			if (!cacheDir.exists()) {
 				cacheDir.mkdirs();
 			}
-			mDiskLruCache = DiskLruCache.open(cacheDir, CommonUtils.getAppVersionCode(context), 1,
+			mDiskLruCache = DiskLruCache.open(cacheDir, ApplicationUtils.getAppVersionCode(), 1,
 					50 * 1024 * 1024);
 		} catch (IOException e) {
 			e.printStackTrace();

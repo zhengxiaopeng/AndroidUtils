@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.roc.annotation.ViewInstaller;
 import com.roc.app.AppManager;
+import com.roc.common.ToastHelper;
 import com.roc.content.SharedPreferencesManager;
 import com.roc.utils.CommonUtils;
 
@@ -20,7 +21,7 @@ import com.roc.utils.CommonUtils;
  * 
  * @author Mr.Zheng
  * @date 2014年8月17日20:50:32
- * @bug 在继承FragmengActivity时会有bug，无法使用
+ * @bug 在继承FragmengActivity时有问题，待解决。
  */
 public abstract class BaseActivity extends Activity {
 	private AppManager appManager = null;
@@ -83,7 +84,7 @@ public abstract class BaseActivity extends Activity {
 				break;
 			if (!isExit) {
 				isExit = true;
-				CommonUtils.showShortToast(this, "再按一次退出程序");
+                ToastHelper.showCustomInfoShortToast("再按一次退出程序");
 				Timer time = new Timer();
 				time.schedule(new TimerTask() {
 					@Override
