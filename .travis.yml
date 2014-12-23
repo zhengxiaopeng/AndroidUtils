@@ -5,7 +5,3 @@ android:
    - build-tools-21.1.2
    - extra
 
-jdk: oraclejdk7
-
-notifications:
-  email: false
