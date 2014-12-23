@@ -7,8 +7,6 @@ android:
 
 jdk: oraclejdk7
 
-before_install:
-  - chmod +x gradlew
-
 script:
-    - ./gradlew check
+    - chmod +x gradlew
+    - ./gradlew clean build
