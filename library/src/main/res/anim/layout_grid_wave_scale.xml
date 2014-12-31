@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 一行一行向下变大移动 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 一行一行向下变大移动 -->
 <gridLayoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
     android:animation="@anim/wave_scale"
     android:columnDelay="0%"

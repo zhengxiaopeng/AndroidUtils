@@ -3,9 +3,10 @@ package com.roc.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.inputmethod.InputMethodManager;
 
-import com.roc.app.MainApplication;
 import com.roc.common.DebugLog;
 
 import java.net.InetAddress;
@@ -20,21 +21,36 @@ public class PhoneUtils {
     /**
      * 获取设备唯一的id标识.
      *
-     * @param context
+     * @param context ApplicationContext
      * @return
      */
-    public static String getDeviceId() {
-        return ((TelephonyManager) MainApplication.getContext().getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+    public static String getDeviceId(Context context) {
+        return ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
     }
 
     /**
      * 隐藏软键盘
      *
-     * @param context
+     * @param activity
      */
-    public static void hideSoftInput(Context context) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(((Activity) context).getWindow().getDecorView().getWindowToken(), 0);
+    public static void hideSoftInput(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
+    }
+
+    /**
+     * 获取屏幕（像素）宽高、密度<br/>
+     * DisplayMetrics.widthPixels <br/>
+     * DisplayMetrics.heightPixels 注意如果有导航栏会减去导航栏高度(沉浸状态时好像也包括？)<br/>
+     * DisplayMetrics.densityDpi <br/>
+     *
+     * @param activity
+     */
+    public static DisplayMetrics getDisplayMetrics(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        display.getMetrics(dm);
+        return dm;
     }
 
     /**
@@ -58,7 +74,23 @@ public class PhoneUtils {
     }
 
     /**
+     * 获取本设备默认状态高度(px)
+     *
+     * @param context ApplicationContext
+     * @return
+     */
+    public static int getDefaultStatusBarHeight(Context context) {
+        int result = 0;
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
+    /**
      * 获取本机IP地址
+     *
      * @return
      */
     public static String getLocalIpAddress() {

@@ -1,5 +1,6 @@
 package com.roc.update;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
@@ -27,13 +28,13 @@ public class DownloadTask {
      * @return
      * @throws Exception
      */
-    public static File downloadFile(String urlPath, String filePath, Handler handler) {
+    public static File downloadFile(Context context, String urlPath, String filePath, Handler handler) {
         DebugLog.v("Apk下载Url：" + urlPath + "\n文件存放地址：" + filePath);
         File file = new File(filePath);
         Message msg;
         try {
             HttpResponse response;
-            response = CustomHttpClient.getHttpResponseByGET(urlPath);
+            response = CustomHttpClient.getHttpResponseByGET(context, urlPath);
             int statusCode = response.getStatusLine().getStatusCode();
             DebugLog.v("下载更新返回状态码：" + statusCode);
             if (statusCode == 200) {

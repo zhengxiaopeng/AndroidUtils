@@ -7,11 +7,11 @@ import com.roc.androidutils.R;
 import com.roc.ui.BaseActivity;
 
 public class AdapterTestActivity extends BaseActivity {
-	Button btn;
+    Button btn;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		btn = findView(R.id.button1);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        btn = findView(R.id.button1);
+    }
 }

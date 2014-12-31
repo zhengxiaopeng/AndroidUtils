@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="2pt" >
+    android:padding="2pt">
 
     <ImageView
         android:id="@+id/imgView_gridview"

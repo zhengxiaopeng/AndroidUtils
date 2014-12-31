@@ -5,6 +5,6 @@
     android:layout_height="fill_parent"
     android:padding="5dp"
     android:textColor="#000"
-    android:textSize="16sp" >
+    android:textSize="16sp">
 
 </TextView>

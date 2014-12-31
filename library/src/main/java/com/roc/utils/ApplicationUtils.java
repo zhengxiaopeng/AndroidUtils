@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Environment;
 
-import com.roc.app.MainApplication;
 import com.roc.security.MD5Helper;
 
 import java.io.File;
@@ -22,17 +21,18 @@ public class ApplicationUtils {
     /**
      * 备份本程序的apk安装文件到SD卡根目录下
      *
+     * @param context     ApplicationContext
      * @param packageName
      * @param mActivity
      * @throws java.io.IOException
      */
-    public static void backupApp() throws IOException {
+    public static void backupApp(Context context) throws IOException {
         // 存放位置
         String newFile = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
         String oldFile = null;
         try {
             // 原始位置
-            oldFile = MainApplication.getContext().getPackageManager().getApplicationInfo(MainApplication.getContext().getPackageName(), 0).sourceDir;
+            oldFile = context.getPackageManager().getApplicationInfo(context.getPackageName(), 0).sourceDir;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -40,7 +40,7 @@ public class ApplicationUtils {
         System.out.println(oldFile);
 
         File in = new File(oldFile);
-        File out = new File(newFile + MainApplication.getContext().getPackageName() + ".apk");
+        File out = new File(newFile + context.getPackageName() + ".apk");
         if (!out.exists()) {
             out.createNewFile();
         } else {
@@ -64,13 +64,13 @@ public class ApplicationUtils {
     /**
      * 获取应用的MD5签名值
      *
-     * @param context
+     * @param context ApplicationContext
      * @return
      */
-    public static String getSign() {
-        PackageManager packageManager = MainApplication.getContext().getPackageManager();
+    public static String getSign(Context context) {
+        PackageManager packageManager = context.getPackageManager();
         try {
-            PackageInfo packageInfo = packageManager.getPackageInfo(MainApplication.getContext().getPackageName(),
+            PackageInfo packageInfo = packageManager.getPackageInfo(context.getPackageName(),
                     PackageManager.GET_SIGNATURES);
             Signature[] signs = packageInfo.signatures;
             Signature sign = signs[0];
@@ -84,12 +84,12 @@ public class ApplicationUtils {
     /**
      * 获取应用版本Code
      *
-     * @param context
+     * @param context ApplicationContext
      * @return
      */
-    public static int getAppVersionCode() {
+    public static int getAppVersionCode(Context context) {
         try {
-            PackageInfo info = MainApplication.getContext().getPackageManager().getPackageInfo(MainApplication.getContext().getPackageName(), 0);
+            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return info.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -100,12 +100,12 @@ public class ApplicationUtils {
     /**
      * 获取应用版本Name
      *
-     * @param context
+     * @param context ApplicationContext
      * @return
      */
-    public static String getAppVersionName() {
+    public static String getAppVersionName(Context context) {
         try {
-            PackageInfo info = MainApplication.getContext().getPackageManager().getPackageInfo(MainApplication.getContext().getPackageName(), 0);
+            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return info.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

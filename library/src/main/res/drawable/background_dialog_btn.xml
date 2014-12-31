@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Dialog的btn -->
+<?xml version="1.0" encoding="utf-8"?><!-- Dialog的btn -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android" android:exitFadeDuration="@android:integer/config_shortAnimTime">
 
-    <item android:drawable="@color/white" android:state_pressed="false"/>
-    <item android:drawable="@color/skyblue" android:state_pressed="true"/>
+    <item android:drawable="@color/white" android:state_pressed="false" />
+    <item android:drawable="@color/skyblue" android:state_pressed="true" />
 
 </selector>

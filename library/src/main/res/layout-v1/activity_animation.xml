@@ -3,13 +3,13 @@
     android:id="@+id/ll_animation_contennt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone" >
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btn_animation_test1"
@@ -32,7 +32,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp" >
+        android:layout_height="30dp">
 
         <Button
             android:id="@+id/btn_animation_menu"

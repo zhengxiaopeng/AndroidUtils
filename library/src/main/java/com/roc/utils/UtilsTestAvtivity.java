@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.roc.androidutils.R;
 import com.roc.annotation.ContentView;
+import com.roc.common.DebugLog;
 import com.roc.ui.BaseActivity;
 
 import java.io.IOException;
@@ -15,7 +16,8 @@ public class UtilsTestAvtivity extends BaseActivity {
     @ContentView(id = R.layout.activity_utils)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println(ApplicationUtils.getSign());
+//        System.out.println(ApplicationUtils.getSign());
+        DebugLog.v("77...." + PhoneUtils.getDefaultStatusBarHeight(getApplicationContext()));
     }
 
     public void click(View v) throws IOException {

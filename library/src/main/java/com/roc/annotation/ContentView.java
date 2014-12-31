@@ -12,10 +12,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface ContentView {
-	/**
-	 * setContentView的Layout id
-	 * 
-	 * @return
-	 */
-	int id();
+    /**
+     * setContentView的Layout id
+     *
+     * @return
+     */
+    int id();
 }

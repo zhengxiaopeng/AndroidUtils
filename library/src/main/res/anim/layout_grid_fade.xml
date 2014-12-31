@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 前向后渐变 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 前向后渐变 -->
 <gridLayoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
     android:animation="@anim/fade"
     android:directionPriority="column"
