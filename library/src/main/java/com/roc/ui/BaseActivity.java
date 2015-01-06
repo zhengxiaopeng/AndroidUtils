@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
@@ -14,6 +15,7 @@ import com.roc.annotation.ViewInstaller;
 import com.roc.app.AppManager;
 import com.roc.common.ToastHelper;
 import com.roc.content.SharedPreferencesManager;
+import com.roc.utils.PhoneUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -77,6 +79,7 @@ public abstract class BaseActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Log.v(this.getClass().getSimpleName(), ">>>onDestroy");
+        //这里需注意屏幕旋转时，这样写会导致finish掉当前activity!
         appManager.finishActivity(this);
     }
 
@@ -176,6 +179,16 @@ public abstract class BaseActivity extends Activity {
      * 手势监听器
      */
     private class MyGestureListener implements GestureDetector.OnGestureListener {
+        private float xLeftEdgeMinDistance;
+        private float xMinDistance;
+        private float yMinDistance;
+
+        public MyGestureListener() {
+            DisplayMetrics dm = PhoneUtils.getDisplayMetrics(getActivity());
+            xLeftEdgeMinDistance = dm.widthPixels / 15.0f;
+            xMinDistance = dm.widthPixels / 20.f;
+            yMinDistance = dm.heightPixels / 30.f;
+        }
 
         @Override
         public boolean onDown(MotionEvent e) {
@@ -206,7 +219,7 @@ public abstract class BaseActivity extends Activity {
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             float x = e2.getX() - e1.getX();
             float y = e2.getY() - e1.getY();
-            if (x > 50 && y < 50 && y > -50) {
+            if (x > xMinDistance && y < yMinDistance && y > -yMinDistance) {
                 finish();
             }
             return false;

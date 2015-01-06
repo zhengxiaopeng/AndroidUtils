@@ -32,7 +32,9 @@
         android:theme="@android:style/Theme.Light">
 
         <!-- androidutils -->
-        <activity android:name="com.roc.androidutils.MainActivity">
+        <activity
+            android:name="com.roc.androidutils.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,6 +79,8 @@
         <activity android:name="com.roc.http.volley.HttpVolleyTestActivity"></activity>
         <!-- content包 -->
         <activity android:name="com.roc.content.ContentTestActivity"></activity>
+        <!--drawable包-->
+        <activity android:name="com.roc.drawable.DrawableTestActivity"></activity>
     </application>
 
 </manifest>

@@ -74,7 +74,7 @@ public class PhoneUtils {
     }
 
     /**
-     * 获取本设备默认状态高度(px)
+     * 获取本设备默认状态栏高度(px)
      *
      * @param context ApplicationContext
      * @return

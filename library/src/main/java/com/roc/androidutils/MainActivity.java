@@ -13,6 +13,7 @@ import com.roc.annotation.AnnotationTestActivity;
 import com.roc.annotation.ContentView;
 import com.roc.annotation.InitView;
 import com.roc.content.ContentTestActivity;
+import com.roc.drawable.DrawableTestActivity;
 import com.roc.http.volley.HttpVolleyTestActivity;
 import com.roc.io.LruCacheTestActivity;
 import com.roc.test.TestActivity;
@@ -68,6 +69,8 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
                 R.drawable.ic_launcher));
         listIntents.add(new Intent(this, ContentTestActivity.class).putExtra("name", "content").putExtra("icon",
                 R.drawable.android));
+        listIntents.add(new Intent(this, DrawableTestActivity.class).putExtra("name", "drawable").putExtra("icon",
+                R.drawable.ic_launcher));
 
         listGridItems = new ArrayList<Map<String, Object>>();
         Map<String, Object> mapGridItem;
