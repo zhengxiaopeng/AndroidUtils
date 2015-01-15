@@ -1,6 +1,6 @@
-#AndroidUtils
+#AndroidUtils(AndroidCommon)
 -------
-叫它Android-Common也行，这个项目是我在开发过程和一些学习收集到的通用代码，包括代码和资源文件。     
+一些通用代码，包括代码和资源文件。     
 项目导入Android Studio就可以直接运行（library），如Screenshots显示，一个包一般代表一个菜单里的东西。   
 
 ##Screenshots
