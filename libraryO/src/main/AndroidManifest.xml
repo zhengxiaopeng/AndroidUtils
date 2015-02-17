@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rocko.androidutils">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <application
+        android:name="com.rocko.app.MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="AndroidUtils"
+        android:theme="@android:style/Theme.Light">
+
+        <!-- androidutils -->
+        <activity
+            android:name="com.rocko.androidutils.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- test基本测试包 -->
+        <activity android:name="com.rocko.test.TestActivity"></activity>
+        <activity android:name="com.rocko.test.OtherActivity"></activity>
+        <!-- Dialog包 -->
+        <activity android:name="com.rocko.widget.dialog.DialogTestActivity"></activity>
+        <!-- Utils包 -->
+        <activity
+            android:name="com.rocko.utils.UtilsTestAvtivity"
+            android:label="UtilsTestAvtivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
+        <!-- Animation包 -->
+        <activity android:name="com.rocko.animation.AnimationTestActivity"></activity>
+        <!-- IO包 -->
+        <activity android:name="com.rocko.io.LruCacheTestActivity"></activity>
+        <!-- 检查更新包 -->
+        <activity
+            android:name="com.rocko.update.UpdateTestActivity"
+            android:label="UpdateTestActivity"></activity>
+        <!-- 注解Annotation包 -->
+        <activity
+            android:name="com.rocko.annotation.AnnotationTestActivity"
+            android:label="AnnotationTestActivity"></activity>
+        <!-- Widget ListView -->
+        <activity
+            android:name="com.rocko.widget.listview.XListViewTestActivity"
+            android:label="XListViewTestActivity"></activity>
+        <!-- 服务包 -->
+        <service android:name="com.rocko.update.UpdateService">
+            <intent-filter>
+                <action android:name="com.roc.service.UPDATE_SERVICE" />
+            </intent-filter>
+        </service>
+        <!-- http包 -->
+        <activity android:name="com.rocko.http.volley.HttpVolleyTestActivity"></activity>
+        <!-- content包 -->
+        <activity android:name="com.rocko.content.ContentTestActivity"></activity>
+        <!--drawable包-->
+        <activity android:name="com.rocko.drawable.DrawableTestActivity"></activity>
+    </application>
+
+</manifest>
