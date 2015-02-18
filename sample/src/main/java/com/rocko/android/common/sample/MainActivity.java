@@ -1,17 +1,33 @@
 package com.rocko.android.common.sample;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.rocko.android.common.util.DialogUtils;
 
 
 public class MainActivity extends ActionBarActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DialogUtils.stratProgressDialog(this, "ss", false, false);
+//        final LoadingDialog loadingDialog = new LoadingDialog(this);
+//        loadingDialog.setMsg("Loading");
+//        loadingDialog.show();
+        new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+//                loadingDialog.dismiss();
+//                DialogUtils.stopProgressDialog();
+            }
+        }.sendEmptyMessageDelayed(0, 3000);
     }
 
 

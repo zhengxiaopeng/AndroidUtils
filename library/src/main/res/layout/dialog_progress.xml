@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 展示progress的布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/ac_shape_round_corner_transparency_77"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="false"
+            android:indeterminateDrawable="@drawable/ac_animated_rotate_progress_image"
+            android:indeterminateDuration="5000"
+            android:maxHeight="60dp"
+            android:maxWidth="60dp"
+            android:minHeight="60dp"
+            android:minWidth="60dp" />
+
+        <TextView
+            android:id="@+id/txtView_dialog_show_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/loading"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</RelativeLayout>
