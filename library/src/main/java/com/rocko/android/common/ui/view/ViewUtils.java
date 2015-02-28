@@ -5,9 +5,6 @@ import android.text.InputType;
 import android.text.Selection;
 import android.view.WindowManager;
 import android.widget.EditText;
-
-import com.rocko.common.DebugLog;
-
 import java.lang.reflect.Method;
 
 /**
@@ -41,7 +38,6 @@ public class ViewUtils {
                 setSoftInputShownOnFocus.setAccessible(true);
                 setSoftInputShownOnFocus.invoke(numEditText, false);
             } catch (Exception e) {
-                DebugLog.e(">>>" + e.getMessage());
                 e.printStackTrace();
             }
         }
