@@ -1,5 +1,6 @@
 package com.rocko.android.common.util;
 
+import android.os.Environment;
 import android.test.InstrumentationTestCase;
 
 /**
@@ -10,8 +11,7 @@ public class UtilsTest extends InstrumentationTestCase {
     public UtilsTest() {
     }
 
-    public void testPatcher() {
-        System.out.println("3333");
-
+    public void testPatcher() throws Exception {
+        PatcherUtils.patcher(Environment.getExternalStorageState(), Environment.getExternalStorageState(), Environment.getExternalStorageState());
     }
 }

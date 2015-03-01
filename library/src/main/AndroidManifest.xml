@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rocko.android.common">
+    package="com.rocko.android.common" >
 
-    <application android:name=".app.ACApplication" />
+    <application android:name=".app.ACApplication" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+    </application>
 
 </manifest>
