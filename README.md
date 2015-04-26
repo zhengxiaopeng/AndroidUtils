@@ -1,12 +1,6 @@
 #AndroidUtils(AndroidCommon)
 -------
-一些通用代码，包括代码和资源文件。     
-项目导入Android Studio就可以直接运行（library），如Screenshots显示，一个包一般代表一个菜单里的东西。   
-
-##Screenshots
----- 
-![2014-12-13更新](https://raw.githubusercontent.com/zhengxiaopeng/AndroidUtils/master/screenshots/20141213204901.jpg)  
-
+一些通用代码，包括代码和资源文件。
 ##License
 -------
 
